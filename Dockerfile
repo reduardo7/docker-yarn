@@ -1,7 +1,7 @@
 FROM ubuntu:18.10
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV NODE_VERSION=11
+ARG NODE_VERSION=11
 
 RUN apt-get update && apt-get install -y apt-transport-https curl wget gnupg
 

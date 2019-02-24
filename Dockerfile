@@ -1,12 +1,13 @@
 FROM ubuntu:18.10
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV NODE_VERSION=10
 
 RUN apt-get update && apt-get install -y apt-transport-https curl wget gnupg
 
 # Node
 # https://github.com/nodesource/distributions/blob/master/README.md
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash -
 
 # Yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
